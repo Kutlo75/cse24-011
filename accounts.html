@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accounts - Heavenly Banking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">🏛️ HEAVENLY BANKING</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="accounts.html" class="nav-link active">Accounts ▾</a></li>
+            <li class="nav-item"><a href="loans.html" class="nav-link">Loans ▾</a></li>
+            <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+          </ul>
+          <div class="d-flex">
+            <a id="loginBtn" href="login.html" class="btn btn-primary me-2">🔐 Login</a>
+            <a id="accountBtn" href="open-account.html" class="btn btn-outline-primary">👥 Open Account</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <section aria-labelledby="accounts-heading">
+      <h1 id="accounts-heading" class="text-center text-primary mb-4">Bank Accounts</h1>
+      <p class="text-center mb-5">Choose the perfect account to match your financial goals:</p>
+      
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <article class="col">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body text-center">
+              <h2 class="card-title text-primary">🎓 Student Account</h2>
+              <p class="card-text">Ideal for students with low fees and easy online access.</p>
+              <a href="open-account.html" class="btn btn-primary">Open Account</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="col">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body text-center">
+              <h2 class="card-title text-primary">👵 Retirement Account</h2>
+              <p class="card-text">Secure your future with special retirement benefits.</p>
+              <a href="open-account.html" class="btn btn-primary">Open Account</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="col">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body text-center">
+              <h2 class="card-title text-primary">🏢 Business Account</h2>
+              <p class="card-text">Manage your business finances with ease and flexibility.</p>
+              <a href="open-account.html" class="btn btn-primary">Open Account</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="col">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body text-center">
+              <h2 class="card-title text-primary">💰 Savings Account</h2>
+              <p class="card-text">Grow your savings with competitive interest rates.</p>
+              <a href="open-account.html" class="btn btn-primary">Open Account</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <section class="col-md-4 text-center text-md-start">
+          <h3>HEAVENLY BANKING</h3>
+          <p>Your trusted financial partner in Botswana since 2025</p>
+        </section>
+        
+        <section class="col-md-4 text-center text-md-start">
+          <h4>Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-light">Home</a></li>
+            <li><a href="branches.html" class="text-light">Find a Branch</a></li>
+            <li><a href="enroll.html" class="text-light">Enroll</a></li>
+          </ul>
+        </section>
+        
+        <section class="col-md-4 text-center text-md-start">
+          <h4>Contact</h4>
+          <address>
+            📍 Plot 54321, CBD, Gaborone
+          </address>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top and Back Buttons -->
+  <a href="#" class="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></a>
+  <a href="javascript:history.back()" class="back-button" title="Go back"><i class="fas fa-arrow-left"></i></a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Back to top button functionality
+      const backToTopButton = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // User authentication check
+      const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+      const loginBtn = document.getElementById('loginBtn');
+      const accountBtn = document.getElementById('accountBtn');
+
+      if (loggedInUser) {
+        loginBtn.innerHTML = '👤 Dashboard';
+        loginBtn.href = 'dashboard.html';
+        accountBtn.innerHTML = '🔐 Logout';
+        accountBtn.className = 'btn btn-danger';
+        accountBtn.onclick = function() {
+          sessionStorage.removeItem('loggedInUser');
+          window.location.href = 'index.html';
+        };
+      }
+    });
+  </script>
+  <script src="auth.js"></script>
+</body>
+</html>

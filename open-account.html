@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open Account - Heavenly Banking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+      <div class="container">
+        <div class="logo navbar-brand">🏛️ HEAVENLY BANKING</div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navMenu">
+          <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="accounts.html" class="nav-link">Accounts ▾</a></li>
+            <li class="nav-item"><a href="loans.html" class="nav-link">Loans ▾</a></li>
+            <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+          </ul>
+          <div class="nav-actions d-flex">
+            <a href="login.html" class="btn btn-primary me-2">🔐 Login</a>
+            <a href="open-account.html" class="btn btn-outline-primary">👥 Open Account</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <h2 class="text-center text-primary mb-4">👥 Open a New Account</h2>
+    <form id="openAccountForm" class="border p-4 bg-light shadow rounded">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" id="fullName" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="nationalId" class="form-label">National ID</label>
+          <input type="text" id="nationalId" class="form-control" required />
+        </div>
+        <div class="col-12">
+          <label for="accountType" class="form-label">Account Type</label>
+          <select id="accountType" class="form-select" required>
+            <option value="">Select...</option>
+            <option>Student Account</option>
+            <option>Retiree Savings</option>
+            <option>Business Account</option>
+            <option>Seniors Premium</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="form-control" required />
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary mt-3">Open Account</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+   <!-- Footer -->
+ <footer class="bg-dark text-light py-4 mt-5">
+  <div class="container d-md-flex justify-content-between text-center text-md-start">
+    <div class="footer-info mb-3 mb-md-0">
+      <h3>HEAVENLY BANKING</h3>
+      <p>Your trusted financial partner in Botswana since 2025</p>
+    </div>
+    <div class="quick-links mb-3 mb-md-0">
+      <h4>Quick Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+        <li><a href="accounts.html" class="text-light text-decoration-none">Accounts</a></li>
+        <li><a href="loans.html" class="text-light text-decoration-none">Loans</a></li>
+        <li><a href="cards.html" class="text-light text-decoration-none">Cards</a></li>
+        <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+        <li><a href="feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+      </ul>
+    </div>
+    <div class="contact">
+      <h4>Contact Us</h4>
+      <p>📍 Plot 54321, CBD, Gaborone, Botswana</p>
+    </div>
+  </div>
+  </footer>
+
+ <script>
+  const form = document.getElementById('openAccountForm');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Gather input values using getElementById
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const nationalId = document.getElementById('nationalId').value.trim();
+    const accountType = document.getElementById('accountType').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Validate fields
+    if (!fullName || !email || !phone || !nationalId || !accountType || !password || !confirmPassword) {
+      alert('Please fill out all fields.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    // Load users from localStorage or initialize
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check for duplicate email
+    const exists = users.some(user => user.email === email);
+    if (exists) {
+      alert('An account with this email already exists.');
+      return;
+    }
+
+    // Create new user object
+    const user = {
+      fullName,
+      email,
+      phone,
+      nationalId,
+      accountType,
+      password,
+      balance: 0,
+      lastLogin: new Date().toLocaleDateString()
+    };
+
+    // Save to users list
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // Save logged in user and redirect
+    sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+    alert('Account opened successfully! Redirecting to dashboard...');
+    window.location.href = 'dashboard.html';
+  });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

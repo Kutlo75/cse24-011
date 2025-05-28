@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Heavenly Banking offers tailored financial services for students, retirees, small businesses and seniors in Botswana">
+  <title>Heavenly Banking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+ <nav class="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+    <div class="container">
+      <div class="logo navbar-brand">🏛️ HEAVENLY BANKING</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navMenu">
+        <ul class="nav-links navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+          </li>
+
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="accounts.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accounts
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="accounts.html#student">Student Accounts</a></li>
+              <li><a class="dropdown-item" href="accounts.html#retirement">Retirement Accounts</a></li>
+              <li><a class="dropdown-item" href="accounts.html#business">Business Accounts</a></li>
+              <li><a class="dropdown-item" href="accounts.html#savings">Savings Accounts</a></li>
+            </ul>
+          </li>
+
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="loans.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Loans
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="loans.html#personal">Personal Loans</a></li>
+              <li><a class="dropdown-item" href="loans.html#home">Home Loans</a></li>
+              <li><a class="dropdown-item" href="loans.html#auto">Auto Loans</a></li>
+              <li><a class="dropdown-item" href="loans.html#business">Business Loans</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+        </ul>
+
+        <div class="nav-actions d-flex">
+          <a href="login.html" class="btn btn-primary me-2">🔐 Login</a>
+          <a href="open-account.html" class="btn btn-outline-primary">👥 Open Account</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Rest of your HTML content remains exactly the same -->
+  <!-- Hero Section -->
+  <section class="hero text-center text-white py-5 bg-primary">
+    <div class="container">
+      <h1 class="display-4">Banking Solutions for Everyone</h1>
+      <p class="lead">Tailored financial services for students, retirees, small businesses and seniors</p>
+      <div class="hero-buttons mt-4 d-flex justify-content-center gap-3 flex-wrap">
+        <a href="open-account.html" class="btn btn-light px-4 py-2">👥 Open Account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Our Specialized Services</h2>
+      <div class="service-cards row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <img src="Images/student.jpg" class="card-img-top rounded" alt="Student">
+            <div class="card-body">
+              <h5 class="card-title">🎓 Students</h5>
+              <a href="accounts.html#student" class="btn btn-primary btn-sm">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <img src="Images/retireed.jpg" class="card-img-top rounded" alt="Retirees">
+            <div class="card-body">
+              <h5 class="card-title">☂️ Retirees</h5>
+              <a href="accounts.html#retirement" class="btn btn-primary btn-sm">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <img src="Images/small banking.jpg" class="card-img-top rounded" alt="Business">
+            <div class="card-body">
+              <h5 class="card-title">🏪 Small Business</h5>
+              <a href="accounts.html#business" class="btn btn-primary btn-sm">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center p-3">
+            <img src="Images/elderlyy.jpg" class="card-img-top rounded" alt="Elderly">
+            <div class="card-body">
+              <h5 class="card-title">💓 Elderly Users</h5>
+              <a href="accounts.html#savings" class="btn btn-primary btn-sm">Apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">What You Can Do</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-card p-4 shadow-sm rounded bg-white">
+            <img src="Images/quick.jpg" class="mb-3 rounded" alt="Quick Transfer">
+            <h5 class="fw-bold">Quick Transfer</h5>
+            <p class="text-muted small">Instantly send money to anyone, anytime.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-card p-4 shadow-sm rounded bg-white">
+            <img src="Images/pay.jpg" class="mb-3 rounded" alt="Pay Bills">
+            <h5 class="fw-bold">Pay Bills</h5>
+            <p class="text-muted small">Settle your utilities and subscriptions easily.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-card p-4 shadow-sm rounded bg-white">
+            <img src="Images/forex.jpg" class="mb-3 rounded" alt="Forex">
+            <h5 class="fw-bold">Forex Rates</h5>
+            <p class="text-muted small">Get the latest foreign exchange rates in real-time.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="feature-card p-4 shadow-sm rounded bg-white">
+            <img src="Images/branch.jpg" class="mb-3 rounded" alt="Branch Locator">
+            <h5 class="fw-bold">Branch Locator</h5>
+            <p class="text-muted small">Find the nearest branch wherever you are.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container d-md-flex justify-content-between text-center text-md-start">
+      <div class="footer-info mb-3 mb-md-0">
+        <h3>HEAVENLY BANKING</h3>
+        <p>Your trusted financial partner in Botswana since 2025</p>
+      </div>
+      <div class="quick-links mb-3 mb-md-0">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="accounts.html" class="text-light text-decoration-none">Accounts</a></li>
+          <li><a href="loans.html" class="text-light text-decoration-none">Loans</a></li>
+          <li><a href="cards.html" class="text-light text-decoration-none">Cards</a></li>
+          <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+          <li><a href="feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h4>Contact Us</h4>
+        <p>📍 Plot 54321, CBD, Gaborone, Botswana</p>
+        <p>☎️ Tell: 3641258</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top and Back Buttons -->
+  <a href="#" class="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></a>
+  <a href="javascript:history.back()" class="back-button" title="Go back"><i class="fas fa-arrow-left"></i></a>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+      const navActions = document.querySelector('.nav-actions');
+
+      if (loggedInUser) {
+        // Update nav to show logout and profile
+        navActions.innerHTML = `
+          <span class="me-3 fw-bold text-primary">Welcome, ${loggedInUser.fullName}</span>
+          <a href="dashboard.html" class="btn btn-outline-primary me-2">🏠 Dashboard</a>
+          <button id="logoutBtn" class="btn btn-danger">🔐 Logout</button>
+        `;
+
+        // Add logout button event
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+          sessionStorage.removeItem('loggedInUser');
+          window.location.reload(); // Refresh to reset UI
+        });
+      } else {
+        // Show login/register if not logged in
+        navActions.innerHTML = `
+          <a href="login.html" class="btn btn-primary me-2">🔐 Login</a>
+          <a href="open-account.html" class="btn btn-outline-primary">👥 Open Account</a>
+        `;
+      }
+      
+      // Back to top button functionality
+      const backToTopButton = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

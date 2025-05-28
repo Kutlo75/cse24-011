@@ -1,0 +1,301 @@
+/* style.css - Heavenly Banking with Photos */
+:root {
+  --primary-blue: #1a4b8c;
+  --accent-blue: #4da6ff;
+  --light-blue: #e6f2ff;
+  --white: #ffffff;
+  --dark-blue: #0d2b4e;
+  --light-gray: #f8f9fa;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #212529;
+  line-height: 1.6;
+  background-color: var(--light-blue);
+  padding-top: 56px;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: var(--white) !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--white) !important;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(26, 75, 140, 0.9), rgba(26, 75, 140, 0.9)), 
+              url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 6rem 0;
+}
+
+/* Services Section with Photos */
+.services {
+  padding: 4rem 0;
+  background-color: var(--light-blue);
+}
+
+.service-card {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.service-card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.service-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 75, 140, 0.7);
+  z-index: -1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .btn-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+/* Features Section with Photos */
+.features {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-blue);
+}
+
+.feature-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.feature-card .fs-1 {
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+}
+
+/* Channels Section with Photos */
+.channels {
+  padding: 4rem 0;
+  background-color: var(--light-blue);
+}
+
+.channel-card {
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.channel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.channel-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.channel-card .card-body {
+  padding: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  color: var(--white);
+  padding: 3rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .services,
+  .features,
+  .channels {
+    padding: 3rem 0;
+  }
+  
+  .service-card {
+    min-height: 150px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-card img,
+  .channel-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-card img,
+  .channel-card img {
+    height: 100px;
+  }
+}
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #0b5ed7;
+  color: white;
+}
+
+/* Back Button */
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.back-button:hover {
+  background: #5c636a;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back-to-top, .back-button {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+/* Mobile Navigation Fixes */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+  
+  .nav-actions {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .nav-actions .btn {
+    width: 100%;
+  }
+}

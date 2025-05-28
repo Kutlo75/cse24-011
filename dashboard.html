@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Heavenly Banking</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
+  <div class="container">
+    <div class="logo navbar-brand">🏛️ HEAVENLY BANKING</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navMenu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="accounts.html" role="button" data-bs-toggle="dropdown">Accounts</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="accounts.html#student">Student Accounts</a></li>
+            <li><a class="dropdown-item" href="accounts.html#retirement">Retirement Accounts</a></li>
+            <li><a class="dropdown-item" href="accounts.html#business">Business Accounts</a></li>
+            <li><a class="dropdown-item" href="accounts.html#savings">Savings Accounts</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="loans.html" role="button" data-bs-toggle="dropdown">Loans</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="loans.html#personal">Personal Loans</a></li>
+            <li><a class="dropdown-item" href="loans.html#home">Home Loans</a></li>
+            <li><a class="dropdown-item" href="loans.html#auto">Auto Loans</a></li>
+            <li><a class="dropdown-item" href="loans.html#business">Business Loans</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="cards.html" class="nav-link">Cards</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="index.html" class="btn btn-primary me-2">🔐 Logout</a>
+        <a href="open-account.html" class="btn btn-outline-primary">👥 Open Account</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Dashboard Content -->
+<div class="container py-5">
+  <h2 class="mb-4">Welcome, <span id="user-name">User</span> 👋</h2>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Account Balance</h5>
+          <p class="card-text fs-4">P <span id="balance">0.00</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Account Type</h5>
+          <p class="card-text" id="account-type">--</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Recent Activity</h5>
+          <p class="card-text">Last login: <span id="last-login">--/--/----</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 d-flex gap-3">
+    <a href="transfer.html" class="btn btn-primary">💸 Make a Transfer</a>
+    
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#depositModal">💰 Deposit Funds</button>
+  </div>
+</div>
+
+<!-- Deposit Modal -->
+<div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="depositModalLabel">Deposit Funds</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="depositForm">
+          <div class="mb-3">
+            <label for="depositAmount" class="form-label">Enter Amount (Pula)</label>
+            <input type="number" id="depositAmount" class="form-control" min="1" required />
+          </div>
+          <div id="depositMessage" class="fw-bold"></div>
+          <button type="submit" class="btn btn-primary mt-3">Deposit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container d-md-flex justify-content-between text-center text-md-start">
+    <div class="mb-3">
+      <h3>HEAVENLY BANKING</h3>
+      <p>Your trusted financial partner in Botswana since 2025</p>
+    </div>
+    <div class="mb-3">
+      <h4>Quick Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+        <li><a href="accounts.html" class="text-light text-decoration-none">Accounts</a></li>
+        <li><a href="loans.html" class="text-light text-decoration-none">Loans</a></li>
+        <li><a href="cards.html" class="text-light text-decoration-none">Cards</a></li>
+        <li><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+        <li><a href="feedback.html" class="text-light text-decoration-none">Feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>📍 Plot 54321, CBD, Gaborone, Botswana</p>
+      <p>☎️ Tell: 3641258</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top and Back Buttons -->
+<a href="#" class="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></a>
+<a href="javascript:history.back()" class="back-button" title="Go back"><i class="fas fa-arrow-left"></i></a>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Back to top button functionality
+  const backToTopButton = document.querySelector('.back-to-top');
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
+    }
+  });
+
+  backToTopButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // User authentication and dashboard functionality
+  const user = JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+  if (!user) {
+    alert("You must log in first.");
+    window.location.href = "login.html";
+  } else {
+    document.getElementById('user-name').innerText = user.fullName;
+    document.getElementById('balance').innerText = (user.balance ?? 0).toFixed(2);
+    document.getElementById('account-type').innerText = user.accountType || '--';
+    document.getElementById('last-login').innerText = user.lastLogin || '--/--/----';
+  }
+
+  const depositForm = document.getElementById('depositForm');
+  const depositMessage = document.getElementById('depositMessage');
+  const depositInput = document.getElementById('depositAmount');
+
+  depositForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const amount = parseFloat(depositInput.value);
+    depositMessage.classList.remove('text-success', 'text-danger');
+
+    if (isNaN(amount) || amount <= 0) {
+      depositMessage.textContent = '❌ Please enter a valid amount.';
+      depositMessage.classList.add('text-danger');
+      return;
+    }
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    let loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    const userIndex = users.findIndex(u => u.email === loggedInUser.email);
+
+    if (userIndex === -1) {
+      depositMessage.textContent = '❌ User not found.';
+      depositMessage.classList.add('text-danger');
+      return;
+    }
+
+    users[userIndex].balance = (users[userIndex].balance || 0) + amount;
+    loggedInUser.balance = users[userIndex].balance;
+
+    localStorage.setItem('users', JSON.stringify(users));
+    sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+
+    document.getElementById('balance').innerText = loggedInUser.balance.toFixed(2);
+
+    depositMessage.textContent = `✅ Deposited P${amount.toFixed(2)} successfully!`;
+    depositMessage.classList.add('text-success');
+
+    setTimeout(() => {
+      const modal = bootstrap.Modal.getInstance(document.getElementById('depositModal'));
+      modal.hide();
+      depositForm.reset();
+      depositMessage.textContent = '';
+    }, 1500);
+  });
+});
+</script>
+</body>
+</html>
